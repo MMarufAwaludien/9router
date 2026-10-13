@@ -20,7 +20,7 @@ ARG NPM_REGISTRY
 RUN apk add --no-cache python3 make g++ linux-headers
 
 COPY package.json ./
-RUN --mount=type=cache,target=/root/.npm \
+RUN --mount=type=cache,id=s/e1c7a704-22c9-488c-a0e3-68113a298e6e-/root/.npm,target=/root/.npm \
     npm install \
       --registry="${NPM_REGISTRY}" \
       --fetch-retries=5 \
